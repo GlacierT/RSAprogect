@@ -172,7 +172,7 @@
             this.panel3.Controls.Add(this.button8);
             this.panel3.Controls.Add(this.textBox3);
             this.panel3.Controls.Add(this.textBox4);
-            this.panel3.Location = new System.Drawing.Point(139, 29);
+            this.panel3.Location = new System.Drawing.Point(139, 27);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(537, 397);
