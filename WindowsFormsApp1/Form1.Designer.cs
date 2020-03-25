@@ -342,22 +342,22 @@
             // button11
             // 
             this.button11.BackColor = System.Drawing.Color.PeachPuff;
-            this.button11.Location = new System.Drawing.Point(366, 203);
+            this.button11.Location = new System.Drawing.Point(364, 12);
             this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(128, 58);
             this.button11.TabIndex = 7;
-            this.button11.Text = "Зберігти нове зображення";
+            this.button11.Text = "Завантажити зображення";
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.PeachPuff;
-            this.button10.Location = new System.Drawing.Point(366, 12);
+            this.button10.Location = new System.Drawing.Point(364, 78);
             this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(128, 45);
+            this.button10.Size = new System.Drawing.Size(128, 48);
             this.button10.TabIndex = 6;
             this.button10.Text = "Завантажити файл";
             this.button10.UseVisualStyleBackColor = false;
@@ -376,7 +376,7 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.PeachPuff;
-            this.button6.Location = new System.Drawing.Point(366, 133);
+            this.button6.Location = new System.Drawing.Point(364, 205);
             this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(128, 50);
@@ -388,7 +388,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.PeachPuff;
-            this.button5.Location = new System.Drawing.Point(366, 73);
+            this.button5.Location = new System.Drawing.Point(364, 144);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(128, 46);

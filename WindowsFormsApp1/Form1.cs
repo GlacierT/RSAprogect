@@ -15,25 +15,26 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         
-       char[] characters = new char[] {'а', 'б', 'в', 'г', 'ґ', 'д', 'е', 'є', 'ж', 'з', 'и', 'і', 'ї', 'й', 'к', 
-           'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ь', 'ю', 'я', '-', ' ', ',',
+       char[] characters = new char[] {'а',' ', 'б', 'в', 'г', 'ґ', 'д', 'е', 'є', 'ж', 'з', 'и', 'і', 'ї', 'й', 'к', 
+           'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ь', 'ю', 'я', '-', ',',
            '.',  'А', 'Б', 'В', 'Г', 'Ґ', 'Д', 'Е', 'Є', 'Ж', 'З', 'И', 'І', 'Ї', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 
            'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ю', 'Я', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '?' };
         
         
         public static Image image;
-        public static Byte[] bytes;
         public static int[] mas;
-        
-        public int width;
-        public int height;
-        public Bitmap bmp;
+        public byte[] bytes;
 
         public string s = "";
         public List<string> result = new List<string>();
         public List<string> input = new List<string>();
         public string resalt = "";
-        
+
+        public string strImg = "";
+        public string stIm = "";
+        public List<string> sI = new List<string>();
+        public Image imgFromStream;
+
         public Form1()
         {
             InitializeComponent();
@@ -215,6 +216,27 @@ namespace WindowsFormsApp1
                         "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            var ms = new MemoryStream();
+            if (image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Jpeg))
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            }
+            if (image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Png))
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            }
+            if (image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Bmp))
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+            }
+            bytes = ms.ToArray();
+            mas = bytes.Select(i =>(int) i).ToArray();
+
+            textBox11.Enabled = true;
+            textBox12.Enabled = true;
+            button8.Enabled = true;
+            button12.Enabled = false;
+            button9.Enabled = false;
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -254,24 +276,64 @@ namespace WindowsFormsApp1
 
         private void button11_Click(object sender, EventArgs e)
         {
-            SaveFileDialog savedialog = new SaveFileDialog();
-            savedialog.Title = "Зберегти зображення як...";
-            savedialog.OverwritePrompt = true;
-            savedialog.CheckPathExists = true;
-            savedialog.Filter = "Image Files(*.BMP)|*.BMP|Image Files(*.JPG)|*.JPG|Image Files(*.PNG)|*.PNG|All files (*.*)|*.*";
-            savedialog.ShowHelp = true;
-            if (savedialog.ShowDialog() == DialogResult.OK)
+            OpenFileDialog open_dialog = new OpenFileDialog();
+            open_dialog.Filter = "Image Files(*.BMP;*.JPG;*.PNG;)|*.BMP;*.JPG;*.PNG|All files (*.*)|*.*";
+            if (open_dialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    image.Save(savedialog.FileName);
+                    image = new Bitmap(open_dialog.FileName);
+                    pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBox2.Image = image;
+                    pictureBox2.Invalidate();
                 }
                 catch
                 {
-                    MessageBox.Show("Неможливо зберегти зображення", "Помилка",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult rezult = MessageBox.Show("Неможливо відкрити зображення",
+                        "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            var ms = new MemoryStream();
+            if (image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Jpeg))
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            }
+            if (image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Png))
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            }
+            if (image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Bmp))
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+            }
+            bytes = ms.ToArray();
+            mas = bytes.Select(i =>(int) i).ToArray();
+
+            OpenFileDialog open_dialog1 = new OpenFileDialog();
+            open_dialog1.Filter = "Image Files(*.txt)|*.txt|All files (*.*)|*.*";
+            if (open_dialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    StreamReader sr = new StreamReader(open_dialog1.FileName);
+                    while (!sr.EndOfStream)
+                    {
+                        sI.Add(sr.ReadLine());
+                    }
+ 
+                    sr.Close();
+                }
+                catch
+                {
+                    DialogResult rezult = MessageBox.Show("Неможливо відкрити документ",
+                        "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            
+            textBox13.Enabled = true;
+            textBox14.Enabled = true;
+            button5.Enabled = true;
+            button6.Enabled = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -362,11 +424,77 @@ namespace WindowsFormsApp1
                         for (int i = 0; i < result.Count; i++)
                             textBox3.Text += result[i] + " ";
                         
+                        textBox11.Enabled = true;
+                        textBox12.Enabled = true;
+                        textBox4.Enabled = true;
                         textBox3.Enabled = true;
+                        button8.Enabled = true;
+                        button9.Enabled = true;
+                        button12.Enabled = true;
                         button7.Enabled = true;
                     }
                     else
                         MessageBox.Show("Заповніть поля ключів!");
+                }
+                if (pictureBox1.Image != null)
+                {
+                    if ((textBox11.Text.Length > 0) && (textBox12.Text.Length > 0))
+                    {
+                        textBox11.Enabled = false;
+                        textBox12.Enabled = false;
+                        textBox4.Enabled = false;
+                        textBox3.Enabled = false;
+                        button8.Enabled = false;
+                        button9.Enabled = false;
+                        button12.Enabled = false;
+                        button7.Enabled = false;
+                            
+                        long e_ = Convert.ToInt64(textBox11.Text);
+                        long n = Convert.ToInt64(textBox12.Text);
+                        
+                        var ran = new Random();
+                        int[] mos = new int[20];
+                        int[] g = new int[20];
+                        
+                        for (int i = 0; i < 20; i++)
+                        {
+                            g[i] = ran.Next(100, mas.Length);
+                            mos[i] = mas[g[i]];
+                        }
+                        
+                        strImg = string.Join(" ", mos);
+                        
+                        result = RSA_Endoce(strImg, e_, n);
+
+                        string som = string.Join(" ", result);
+                        int[] ia = som.Split(' ').Select(w => Convert.ToInt32(w)).ToArray();
+
+                        for (int i = 0; i < 20; i++)
+                        {
+                            mas[g[i]] = ia[i];
+                        }
+                        
+                        strImg = string.Join(" ", g);
+                        stIm = string.Join(" ", ia);
+                        
+                        byte[] b = mas.Select(i => (byte)i).ToArray();
+                        var imageMemoryStream = new MemoryStream(b);
+                        imgFromStream = Image.FromStream(imageMemoryStream);
+                        pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                        pictureBox1.Image = imgFromStream;
+                        
+                        textBox11.Enabled = true;
+                        textBox12.Enabled = true;
+                        textBox4.Enabled = true;
+                        textBox3.Enabled = true;
+                        button8.Enabled = true;
+                        button9.Enabled = true;
+                        button12.Enabled = true;
+                        button7.Enabled = true;
+                    }
+                    else
+                        MessageBox.Show("Заповніть поля ключів!");
+                    
                 }
             }
             
@@ -428,6 +556,7 @@ namespace WindowsFormsApp1
                             foreach (string item in result)
                                 sw.WriteLine(item);
                             sw.Close();
+                            MessageBox.Show("Зашифрований текс збережено!");
                         }
                         catch
                         {
@@ -435,14 +564,59 @@ namespace WindowsFormsApp1
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    MessageBox.Show("Зашифрований текс збережено!");
+                }
+
+                if (pictureBox1.Image != null)
+                {
+                    SaveFileDialog savedialog = new SaveFileDialog();
+                    savedialog.Title = "Зберегти зображення як...";
+                    savedialog.OverwritePrompt = true;
+                    savedialog.CheckPathExists = true;
+                    savedialog.Filter = "Image Files(*.jpg)|*.jpg | All files (*.*)|*.*";
+                    savedialog.ShowHelp = true;
+                    if (savedialog.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            imgFromStream.Save(savedialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            MessageBox.Show("Зашифроване зображення збережено!");
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Неможливо зберегти зображення", "Помилка",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    
+                    SaveFileDialog savedialog1 = new SaveFileDialog();
+                    savedialog1.Title = "Зберегти як...";
+                    savedialog1.OverwritePrompt = true;
+                    savedialog1.CheckPathExists = true;
+                    savedialog1.Filter = "Image Files(*.txt)|*.txt|All files (*.*)|*.*";
+                    savedialog1.ShowHelp = true;
+                    if (savedialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            StreamWriter sw = new StreamWriter(savedialog1.FileName);
+                            sw.WriteLine(strImg);
+                            sw.WriteLine(stIm);
+                            sw.Close();
+                            MessageBox.Show("Допоміжну інформацію збережено!");
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Неможливо зберегти", "Помилка",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (textBox4.Text.Length < 0 && pictureBox1.Image == null)
+            if (textBox4.Text.Length < 0 && pictureBox2.Image == null)
             {
                 MessageBox.Show("Заповніть текстове поле, чи завантажте зображення!");
             }
@@ -464,15 +638,77 @@ namespace WindowsFormsApp1
                         long d = Convert.ToInt64(textBox13.Text);
                         long n = Convert.ToInt64(textBox14.Text);
 
-                        //string s = textBox1.Text;
-                        //List<string> r = s.Split(' ').ToList();
-
                         resalt = RSA_Dedoce(input, d, n);
 
                         textBox2.Text = resalt;
                             
+                        textBox13.Enabled = true;
+                        textBox14.Enabled = true;
+                        textBox1.Enabled = true;
                         textBox2.Enabled = true;
+                        button10.Enabled = true;
                         button6.Enabled = true;
+                        button5.Enabled = true;
+                        button11.Enabled = true;
+                    }
+                    else
+                        MessageBox.Show("Заповніть поля ключів!");
+                }
+                if (pictureBox2.Image != null)
+                {
+                    if ((textBox13.Text.Length > 0) && (textBox14.Text.Length > 0))
+                    {
+                        textBox13.Enabled = false;
+                        textBox14.Enabled = false;
+                        textBox1.Enabled = false;
+                        textBox2.Enabled = false;
+                        button10.Enabled = false;
+                        button6.Enabled = false;
+                        button5.Enabled = false;
+                        button11.Enabled = false;
+                        
+                        long d = Convert.ToInt64(textBox13.Text);
+                        long n = Convert.ToInt64(textBox14.Text);
+
+                        long[] ia = new long[20];
+                        int[] ar = new int[20];
+                        
+                        ia = sI[0].Split(' ').Select(v => Convert.ToInt64(v)).ToArray();
+                        int[] kj = sI[1].Split(' ').Select(v => Convert.ToInt32(v)).ToArray();
+                        ar = ia.Select(i => (int)i).ToArray();
+                        int[] ms = new int[20];
+                        
+                        for (int i = 0; i < 20; i++)
+                        {
+                            ms[i] = mas[ar[i]];
+                        }
+                        
+                        string rlt = string.Join(" ", kj);
+                        List<string> res = rlt.Split(' ').ToList();
+
+                        resalt = RSA_Dedoce(res, d, n);
+
+                        int[] ai = resalt.Split(' ').Select(k => Convert.ToInt32(k)).ToArray();
+                        
+                        for (int i = 0; i < 20; i++)
+                        {
+                            mas[ar[i]] = ai[i]; 
+                        }
+                        
+                        byte[] b = mas.Select(i => (byte)i).ToArray();
+                        var imageMemoryStream = new MemoryStream(b);
+                        imgFromStream = Image.FromStream(imageMemoryStream);
+                        pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                        pictureBox2.Image = imgFromStream;
+                            
+                        textBox13.Enabled = true;
+                        textBox14.Enabled = true;
+                        textBox1.Enabled = true;
+                        textBox2.Enabled = true;
+                        button10.Enabled = true;
+                        button6.Enabled = true;
+                        button5.Enabled = true;
+                        button11.Enabled = true;
                     }
                     else
                         MessageBox.Show("Заповніть поля ключів!");
@@ -511,6 +747,29 @@ namespace WindowsFormsApp1
                         }
                     }
                     MessageBox.Show("Дешифрований текс збережено!");
+                }
+
+                if (pictureBox2.Image != null)
+                {
+                    SaveFileDialog savedialog = new SaveFileDialog();
+                    savedialog.Title = "Зберегти зображення як...";
+                    savedialog.OverwritePrompt = true;
+                    savedialog.CheckPathExists = true;
+                    savedialog.Filter = "Image Files(*.jpg)|*.jpg | All files (*.*)|*.*";
+                    savedialog.ShowHelp = true;
+                    if (savedialog.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            imgFromStream.Save(savedialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            MessageBox.Show("Зображення збережено!");
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Неможливо зберегти зображення", "Помилка",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
             }
         }
