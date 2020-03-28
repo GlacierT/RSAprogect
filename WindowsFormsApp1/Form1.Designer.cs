@@ -30,6 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.домопогаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Інструкція = new System.Windows.Forms.ToolStripMenuItem();
+            this.проАвторівToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -86,7 +88,8 @@
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.домопогаToolStripMenuItem});
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[]
+                {this.домопогаToolStripMenuItem, this.Інструкція, this.проАвторівToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -97,9 +100,23 @@
             // домопогаToolStripMenuItem
             // 
             this.домопогаToolStripMenuItem.Name = "домопогаToolStripMenuItem";
-            this.домопогаToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.домопогаToolStripMenuItem.Text = "Домопога";
+            this.домопогаToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.домопогаToolStripMenuItem.Text = "Про прогрму";
             this.домопогаToolStripMenuItem.Click += new System.EventHandler(this.домопогаToolStripMenuItem_Click);
+            // 
+            // Інструкція
+            // 
+            this.Інструкція.Name = "Інструкція";
+            this.Інструкція.Size = new System.Drawing.Size(75, 20);
+            this.Інструкція.Text = "Інструкція";
+            this.Інструкція.Click += new System.EventHandler(this.Інструкція_Click);
+            // 
+            // проАвторівToolStripMenuItem1
+            // 
+            this.проАвторівToolStripMenuItem1.Name = "проАвторівToolStripMenuItem1";
+            this.проАвторівToolStripMenuItem1.Size = new System.Drawing.Size(85, 20);
+            this.проАвторівToolStripMenuItem1.Text = "Про авторів";
+            this.проАвторівToolStripMenuItem1.Click += new System.EventHandler(this.проАвторівToolStripMenuItem1_Click);
             // 
             // button1
             // 
@@ -292,10 +309,10 @@
             this.panel3.Controls.Add(this.button8);
             this.panel3.Controls.Add(this.textBox3);
             this.panel3.Controls.Add(this.textBox4);
-            this.panel3.Location = new System.Drawing.Point(141, 26);
+            this.panel3.Location = new System.Drawing.Point(141, 27);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(537, 394);
+            this.panel3.Size = new System.Drawing.Size(537, 393);
             this.panel3.TabIndex = 1;
             this.panel3.Visible = false;
             // 
@@ -582,7 +599,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "add";
+            this.Text = "Шифрування алгоритмом RSA";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -647,6 +664,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.ToolStripMenuItem проАвторівToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem Інструкція;
     }
 }
 

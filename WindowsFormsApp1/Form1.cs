@@ -130,7 +130,20 @@ namespace WindowsFormsApp1
         
         private void домопогаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Программа візуального представлення RSA","О проекті", MessageBoxButtons.OK);
+            string t = "";
+             
+            StreamReader sr = new StreamReader(@"C:\Users\User\Desktop\WindowsFormsApp1\про_програму.txt");
+             
+            while (!sr.EndOfStream)
+            {
+                t += "\n";
+                t += sr.ReadLine();
+                t += "\n";
+            }
+             
+            sr.Close();
+            
+            MessageBox.Show(t);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -186,9 +199,9 @@ namespace WindowsFormsApp1
         {
 
             textBox4.Text = "Введыть текст для шифрування";//подсказка
-            textBox4.ForeColor = Color.Gray;
+            textBox4.ForeColor = Color.Black;
             textBox1.Text = "Введыть текст для розшифрування";//подсказка
-            textBox1.ForeColor = Color.Gray;
+            textBox1.ForeColor = Color.Black;
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
@@ -772,6 +785,43 @@ namespace WindowsFormsApp1
                     }
                 }
             }
+        }
+
+        private void проАвторівToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string t = "";
+             
+            StreamReader sr = new StreamReader(@"C:\Users\User\Desktop\WindowsFormsApp1\про_авторів.txt");
+             
+            while (!sr.EndOfStream)
+            {
+                t += "\n";
+                t += sr.ReadLine();
+                t += "\n";
+            }
+             
+            sr.Close();
+            
+            MessageBox.Show(t);
+        }
+
+
+        private void Інструкція_Click(object sender, EventArgs e)
+        {
+            string t = "";
+             
+            StreamReader sr = new StreamReader(@"C:\Users\User\Desktop\WindowsFormsApp1\Інструкція.txt");
+             
+            while (!sr.EndOfStream)
+            {
+                t += "\n";
+                t += sr.ReadLine();
+                t += "\n";
+            }
+             
+            sr.Close();
+            
+            MessageBox.Show(t);
         }
     }
 }
