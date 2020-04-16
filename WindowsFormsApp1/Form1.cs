@@ -146,7 +146,7 @@ namespace WindowsFormsApp1
             MessageBox.Show(t);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Ключі_Click(object sender, EventArgs e)
         {
             panel1.Show();
             panel2.Visible = true;
@@ -163,7 +163,7 @@ namespace WindowsFormsApp1
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Шифрувати_Click(object sender, EventArgs e)
         {
             panel2.Show();
             panel1.Visible = true;
@@ -176,7 +176,7 @@ namespace WindowsFormsApp1
             button6.Enabled = false;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Дешифрувати_Click(object sender, EventArgs e)
         {
             panel3.Show();
             panel3.Visible = true;
@@ -185,8 +185,8 @@ namespace WindowsFormsApp1
             textBox11.Enabled = false;
             textBox12.Enabled = false;
             textBox3.Enabled = false;
-            button8.Enabled = false;
-            button7.Enabled = false;
+            ШифруватиІнф.Enabled = false;
+            Зберигти.Enabled = false;
         }
 
         private void textBox4_Enter(object sender, EventArgs e)
@@ -210,7 +210,7 @@ namespace WindowsFormsApp1
             textBox1.ForeColor = Color.Black;
         }
         
-        private void button9_Click(object sender, EventArgs e)
+        private void ЗвантажитиЗображення_Click(object sender, EventArgs e)
         {
             OpenFileDialog open_dialog = new OpenFileDialog();
             open_dialog.Filter = "Image Files(*.BMP;*.JPG;*.PNG;)|*.BMP;*.JPG;*.PNG|All files (*.*)|*.*";
@@ -247,12 +247,12 @@ namespace WindowsFormsApp1
 
             textBox11.Enabled = true;
             textBox12.Enabled = true;
-            button8.Enabled = true;
-            button12.Enabled = false;
-            button9.Enabled = false;
+            ШифруватиІнф.Enabled = true;
+            ЗавантажитиФайл.Enabled = false;
+            ЗвантажитиЗображення.Enabled = false;
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void ШифрФайл_Click(object sender, EventArgs e)
         {
             OpenFileDialog open_dialog = new OpenFileDialog();
             open_dialog.Filter = "Image Files(*.txt)|*.txt|All files (*.*)|*.*";
@@ -287,7 +287,7 @@ namespace WindowsFormsApp1
             //button11.Enabled = false;
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void ШифрЗоб_Click(object sender, EventArgs e)
         {
             OpenFileDialog open_dialog = new OpenFileDialog();
             open_dialog.Filter = "Image Files(*.BMP;*.JPG;*.PNG;)|*.BMP;*.JPG;*.PNG|All files (*.*)|*.*";
@@ -349,7 +349,7 @@ namespace WindowsFormsApp1
             button6.Enabled = false;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void ГенеруванняКлючів_Click(object sender, EventArgs e)
         {
             if ((textBox5.Text.Length > 0) && (textBox6.Text.Length > 0))
             {
@@ -357,9 +357,9 @@ namespace WindowsFormsApp1
                 long q = Convert.ToInt64(textBox6.Text);
                 if (IsTheNumberSimple(p) && IsTheNumberSimple(q))
                 {
-                    button1.Enabled = false;
-                    button2.Enabled = false;
-                    button3.Enabled = false;
+                    Ключі.Enabled = false;
+                    Дешифрувати.Enabled = false;
+                    Шифрувати.Enabled = false;
                     textBox5.Enabled = false;
                     textBox6.Enabled = false;
 
@@ -381,9 +381,9 @@ namespace WindowsFormsApp1
                     textBox8.Enabled = false;
                     textBox9.Enabled = false;
                     textBox10.Enabled = false;
-                    button1.Enabled = true;
-                    button2.Enabled = true;
-                    button3.Enabled = true;
+                    Ключі.Enabled = true;
+                    Дешифрувати.Enabled = true;
+                    Шифрувати.Enabled = true;
                 }
                 else
                     MessageBox.Show("p чи q - не росте число!");
@@ -407,7 +407,7 @@ namespace WindowsFormsApp1
             MessageBox.Show("Ключі збережено до файлу key.txt");
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void ШифруватиІнф_Click(object sender, EventArgs e)
         {
             if (textBox4.Text.Length < 0 && pictureBox1.Image == null)
             {
@@ -423,10 +423,10 @@ namespace WindowsFormsApp1
                         textBox12.Enabled = false;
                         textBox4.Enabled = false;
                         textBox3.Enabled = false;
-                        button8.Enabled = false;
-                        button9.Enabled = false;
-                        button12.Enabled = false;
-                        button7.Enabled = false;
+                        ШифруватиІнф.Enabled = false;
+                        ЗвантажитиЗображення.Enabled = false;
+                        ЗавантажитиФайл.Enabled = false;
+                        Зберигти.Enabled = false;
                         
                         long e_ = Convert.ToInt64(textBox11.Text);
                         long n = Convert.ToInt64(textBox12.Text);
@@ -441,10 +441,10 @@ namespace WindowsFormsApp1
                         textBox12.Enabled = true;
                         textBox4.Enabled = true;
                         textBox3.Enabled = true;
-                        button8.Enabled = true;
-                        button9.Enabled = true;
-                        button12.Enabled = true;
-                        button7.Enabled = true;
+                        ШифруватиІнф.Enabled = true;
+                        ЗвантажитиЗображення.Enabled = true;
+                        ЗавантажитиФайл.Enabled = true;
+                        Зберигти.Enabled = true;
                     }
                     else
                         MessageBox.Show("Заповніть поля ключів!");
@@ -457,10 +457,10 @@ namespace WindowsFormsApp1
                         textBox12.Enabled = false;
                         textBox4.Enabled = false;
                         textBox3.Enabled = false;
-                        button8.Enabled = false;
-                        button9.Enabled = false;
-                        button12.Enabled = false;
-                        button7.Enabled = false;
+                        ШифруватиІнф.Enabled = false;
+                        ЗвантажитиЗображення.Enabled = false;
+                        ЗавантажитиФайл.Enabled = false;
+                        Зберигти.Enabled = false;
                             
                         long e_ = Convert.ToInt64(textBox11.Text);
                         long n = Convert.ToInt64(textBox12.Text);
@@ -500,10 +500,10 @@ namespace WindowsFormsApp1
                         textBox12.Enabled = true;
                         textBox4.Enabled = true;
                         textBox3.Enabled = true;
-                        button8.Enabled = true;
-                        button9.Enabled = true;
-                        button12.Enabled = true;
-                        button7.Enabled = true;
+                        ШифруватиІнф.Enabled = true;
+                        ЗвантажитиЗображення.Enabled = true;
+                        ЗавантажитиФайл.Enabled = true;
+                        Зберигти.Enabled = true;
                     }
                     else
                         MessageBox.Show("Заповніть поля ключів!");
@@ -514,7 +514,7 @@ namespace WindowsFormsApp1
         }
 
 
-        private void button12_Click(object sender, EventArgs e)
+        private void ЗавантажитиФайл_Click(object sender, EventArgs e)
         {
             OpenFileDialog open_dialog = new OpenFileDialog();
             open_dialog.Filter = "Image Files(*.txt)|*.txt|All files (*.*)|*.*";
@@ -540,12 +540,12 @@ namespace WindowsFormsApp1
             
             textBox11.Enabled = true;
             textBox12.Enabled = true;
-            button8.Enabled = true;
-            button12.Enabled = false;
-            button9.Enabled = false;
+            ШифруватиІнф.Enabled = true;
+            ЗавантажитиФайл.Enabled = false;
+            ЗвантажитиЗображення.Enabled = false;
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void Зберигти_Click(object sender, EventArgs e)
         {
             if (textBox3.Text.Length < 0 && pictureBox1.Image == null)
             {
@@ -627,7 +627,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Дешифрування_Click(object sender, EventArgs e)
         {
             if (textBox4.Text.Length < 0 && pictureBox2.Image == null)
             {
@@ -729,7 +729,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void ЗберигтиДешифр_Click(object sender, EventArgs e)
         {
             if (textBox2.Text.Length < 0 && pictureBox2.Image == null)
             {

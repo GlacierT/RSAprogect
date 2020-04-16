@@ -32,9 +32,9 @@
             this.домопогаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Інструкція = new System.Windows.Forms.ToolStripMenuItem();
             this.проАвторівToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Ключі = new System.Windows.Forms.Button();
+            this.Дешифрувати = new System.Windows.Forms.Button();
+            this.Шифрувати = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -54,11 +54,11 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.ЗавантажитиФайл = new System.Windows.Forms.Button();
+            this.ЗвантажитиЗображення = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.Зберигти = new System.Windows.Forms.Button();
+            this.ШифруватиІнф = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -118,41 +118,41 @@
             this.проАвторівToolStripMenuItem1.Text = "Про авторів";
             this.проАвторівToolStripMenuItem1.Click += new System.EventHandler(this.проАвторівToolStripMenuItem1_Click);
             // 
-            // button1
+            // Ключі
             // 
-            this.button1.BackColor = System.Drawing.Color.SandyBrown;
-            this.button1.Location = new System.Drawing.Point(20, 54);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 46);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Ключі";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Ключі.BackColor = System.Drawing.Color.SandyBrown;
+            this.Ключі.Location = new System.Drawing.Point(20, 54);
+            this.Ключі.Margin = new System.Windows.Forms.Padding(2);
+            this.Ключі.Name = "Ключі";
+            this.Ключі.Size = new System.Drawing.Size(103, 46);
+            this.Ключі.TabIndex = 1;
+            this.Ключі.Text = "Ключі";
+            this.Ключі.UseVisualStyleBackColor = false;
+            this.Ключі.Click += new System.EventHandler(this.Ключі_Click);
             // 
-            // button2
+            // Дешифрувати
             // 
-            this.button2.BackColor = System.Drawing.Color.SandyBrown;
-            this.button2.Location = new System.Drawing.Point(20, 202);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 46);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Дешифрувати\r\n";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Дешифрувати.BackColor = System.Drawing.Color.SandyBrown;
+            this.Дешифрувати.Location = new System.Drawing.Point(20, 202);
+            this.Дешифрувати.Margin = new System.Windows.Forms.Padding(2);
+            this.Дешифрувати.Name = "Дешифрувати";
+            this.Дешифрувати.Size = new System.Drawing.Size(103, 46);
+            this.Дешифрувати.TabIndex = 2;
+            this.Дешифрувати.Text = "Дешифрувати\r\n";
+            this.Дешифрувати.UseVisualStyleBackColor = false;
+            this.Дешифрувати.Click += new System.EventHandler(this.Шифрувати_Click);
             // 
-            // button3
+            // Шифрувати
             // 
-            this.button3.BackColor = System.Drawing.Color.SandyBrown;
-            this.button3.Location = new System.Drawing.Point(20, 129);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 46);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Шифрувати";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Шифрувати.BackColor = System.Drawing.Color.SandyBrown;
+            this.Шифрувати.Location = new System.Drawing.Point(20, 129);
+            this.Шифрувати.Margin = new System.Windows.Forms.Padding(2);
+            this.Шифрувати.Name = "Шифрувати";
+            this.Шифрувати.Size = new System.Drawing.Size(103, 46);
+            this.Шифрувати.TabIndex = 3;
+            this.Шифрувати.Text = "Шифрувати";
+            this.Шифрувати.UseVisualStyleBackColor = false;
+            this.Шифрувати.Click += new System.EventHandler(this.Дешифрувати_Click);
             // 
             // panel1
             // 
@@ -168,7 +168,7 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(139, 27);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(530, 384);
@@ -225,7 +225,7 @@
             this.button11.TabIndex = 7;
             this.button11.Text = "Завантажити зображення";
             this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.button11.Click += new System.EventHandler(this.ШифрЗоб_Click);
             // 
             // button10
             // 
@@ -237,7 +237,7 @@
             this.button10.TabIndex = 6;
             this.button10.Text = "Завантажити файл";
             this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.button10.Click += new System.EventHandler(this.ШифрФайл_Click);
             // 
             // pictureBox2
             // 
@@ -259,7 +259,7 @@
             this.button6.TabIndex = 4;
             this.button6.Text = "Зберигти";
             this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.ЗберигтиДешифр_Click);
             // 
             // button5
             // 
@@ -271,7 +271,7 @@
             this.button5.TabIndex = 2;
             this.button5.Text = "Дешифрувати";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.Дешифрування_Click);
             // 
             // textBox2
             // 
@@ -300,16 +300,15 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.textBox12);
             this.panel3.Controls.Add(this.textBox11);
-            this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.button12);
-            this.panel3.Controls.Add(this.button9);
+            this.panel3.Controls.Add(this.ЗавантажитиФайл);
+            this.panel3.Controls.Add(this.ЗвантажитиЗображення);
             this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.button7);
-            this.panel3.Controls.Add(this.button8);
+            this.panel3.Controls.Add(this.Зберигти);
+            this.panel3.Controls.Add(this.ШифруватиІнф);
             this.panel3.Controls.Add(this.textBox3);
             this.panel3.Controls.Add(this.textBox4);
-            this.panel3.Location = new System.Drawing.Point(141, 27);
+            this.panel3.Location = new System.Drawing.Point(139, 27);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(537, 393);
@@ -356,29 +355,29 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "N = ";
             // 
-            // button12
+            // ЗавантажитиФайл
             // 
-            this.button12.BackColor = System.Drawing.Color.PeachPuff;
-            this.button12.Location = new System.Drawing.Point(346, 78);
-            this.button12.Margin = new System.Windows.Forms.Padding(2);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(128, 48);
-            this.button12.TabIndex = 13;
-            this.button12.Text = "Завантажити докумен\r\n";
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.ЗавантажитиФайл.BackColor = System.Drawing.Color.PeachPuff;
+            this.ЗавантажитиФайл.Location = new System.Drawing.Point(346, 78);
+            this.ЗавантажитиФайл.Margin = new System.Windows.Forms.Padding(2);
+            this.ЗавантажитиФайл.Name = "ЗавантажитиФайл";
+            this.ЗавантажитиФайл.Size = new System.Drawing.Size(128, 48);
+            this.ЗавантажитиФайл.TabIndex = 13;
+            this.ЗавантажитиФайл.Text = "Завантажити докумен\r\n";
+            this.ЗавантажитиФайл.UseVisualStyleBackColor = false;
+            this.ЗавантажитиФайл.Click += new System.EventHandler(this.ЗавантажитиФайл_Click);
             // 
-            // button9
+            // ЗвантажитиЗображення
             // 
-            this.button9.BackColor = System.Drawing.Color.PeachPuff;
-            this.button9.Location = new System.Drawing.Point(346, 13);
-            this.button9.Margin = new System.Windows.Forms.Padding(2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(128, 48);
-            this.button9.TabIndex = 11;
-            this.button9.Text = "Завантажити зображення";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.ЗвантажитиЗображення.BackColor = System.Drawing.Color.PeachPuff;
+            this.ЗвантажитиЗображення.Location = new System.Drawing.Point(346, 13);
+            this.ЗвантажитиЗображення.Margin = new System.Windows.Forms.Padding(2);
+            this.ЗвантажитиЗображення.Name = "ЗвантажитиЗображення";
+            this.ЗвантажитиЗображення.Size = new System.Drawing.Size(128, 48);
+            this.ЗвантажитиЗображення.TabIndex = 11;
+            this.ЗвантажитиЗображення.Text = "Завантажити зображення";
+            this.ЗвантажитиЗображення.UseVisualStyleBackColor = false;
+            this.ЗвантажитиЗображення.Click += new System.EventHandler(this.ЗвантажитиЗображення_Click);
             // 
             // pictureBox1
             // 
@@ -390,29 +389,29 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // button7
+            // Зберигти
             // 
-            this.button7.BackColor = System.Drawing.Color.PeachPuff;
-            this.button7.Location = new System.Drawing.Point(346, 200);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(128, 42);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Зберигти";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.Зберигти.BackColor = System.Drawing.Color.PeachPuff;
+            this.Зберигти.Location = new System.Drawing.Point(346, 200);
+            this.Зберигти.Margin = new System.Windows.Forms.Padding(2);
+            this.Зберигти.Name = "Зберигти";
+            this.Зберигти.Size = new System.Drawing.Size(128, 42);
+            this.Зберигти.TabIndex = 9;
+            this.Зберигти.Text = "Зберигти";
+            this.Зберигти.UseVisualStyleBackColor = false;
+            this.Зберигти.Click += new System.EventHandler(this.Зберигти_Click);
             // 
-            // button8
+            // ШифруватиІнф
             // 
-            this.button8.BackColor = System.Drawing.Color.PeachPuff;
-            this.button8.Location = new System.Drawing.Point(346, 140);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(128, 46);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "Шифрувати";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.ШифруватиІнф.BackColor = System.Drawing.Color.PeachPuff;
+            this.ШифруватиІнф.Location = new System.Drawing.Point(346, 140);
+            this.ШифруватиІнф.Margin = new System.Windows.Forms.Padding(2);
+            this.ШифруватиІнф.Name = "ШифруватиІнф";
+            this.ШифруватиІнф.Size = new System.Drawing.Size(128, 46);
+            this.ШифруватиІнф.TabIndex = 7;
+            this.ШифруватиІнф.Text = "Шифрувати";
+            this.ШифруватиІнф.UseVisualStyleBackColor = false;
+            this.ШифруватиІнф.Click += new System.EventHandler(this.ШифруватиІнф_Click);
             // 
             // textBox3
             // 
@@ -582,7 +581,7 @@
             this.button4.TabIndex = 0;
             this.button4.Text = "Cтворити пару ключів";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.ГенеруванняКлючів_Click);
             // 
             // Form1
             // 
@@ -591,9 +590,10 @@
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(700, 422);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Шифрувати);
+            this.Controls.Add(this.Дешифрувати);
+            this.Controls.Add(this.Ключі);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel2);
             this.MainMenuStrip = this.menuStrip1;
@@ -619,9 +619,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem домопогаToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
@@ -630,10 +627,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button10;
@@ -653,7 +647,6 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
@@ -666,6 +659,13 @@
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.ToolStripMenuItem проАвторівToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem Інструкція;
+        private System.Windows.Forms.Button Ключі;
+        private System.Windows.Forms.Button Шифрувати;
+        private System.Windows.Forms.Button Дешифрувати;
+        private System.Windows.Forms.Button ЗвантажитиЗображення;
+        private System.Windows.Forms.Button ЗавантажитиФайл;
+        private System.Windows.Forms.Button ШифруватиІнф;
+        private System.Windows.Forms.Button Зберигти;
     }
 }
 
