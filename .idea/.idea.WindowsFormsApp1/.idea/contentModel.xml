@@ -21,6 +21,18 @@
           <e p="Settings.settings" t="Include" />
         </e>
         <e p="WindowsFormsApp1.csproj" t="IncludeRecursive" />
+        <e p="Про авторів.cs" t="Include" />
+        <e p="Про авторів.Designer.cs" t="Include" />
+        <e p="Про авторів.resx" t="Include" />
+        <e p="ПроАлгоритм.cs" t="Include" />
+        <e p="ПроАлгоритм.Designer.cs" t="Include" />
+        <e p="ПроАлгоритм.resx" t="Include" />
+        <e p="ПроПрограму.cs" t="Include" />
+        <e p="ПроПрограму.Designer.cs" t="Include" />
+        <e p="ПроПрограму.resx" t="Include" />
+        <e p="Інструкція.cs" t="Include" />
+        <e p="Інструкція.Designer.cs" t="Include" />
+        <e p="Інструкція.resx" t="Include" />
       </e>
       <e p="WindowsFormsApp1.sln" t="IncludeFlat" />
     </e>

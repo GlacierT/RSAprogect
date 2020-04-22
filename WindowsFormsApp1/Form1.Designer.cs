@@ -77,6 +77,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.проАвторівToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
@@ -89,7 +90,10 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[]
-                {this.домопогаToolStripMenuItem, this.Інструкція, this.проАвторівToolStripMenuItem1});
+            {
+                this.домопогаToolStripMenuItem, this.Інструкція, this.проАвторівToolStripMenuItem1,
+                this.проАвторівToolStripMenuItem
+            });
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -100,8 +104,8 @@
             // домопогаToolStripMenuItem
             // 
             this.домопогаToolStripMenuItem.Name = "домопогаToolStripMenuItem";
-            this.домопогаToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
-            this.домопогаToolStripMenuItem.Text = "Про прогрму";
+            this.домопогаToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.домопогаToolStripMenuItem.Text = "Про програму";
             this.домопогаToolStripMenuItem.Click += new System.EventHandler(this.домопогаToolStripMenuItem_Click);
             // 
             // Інструкція
@@ -397,7 +401,7 @@
             this.Зберигти.Name = "Зберигти";
             this.Зберигти.Size = new System.Drawing.Size(128, 42);
             this.Зберигти.TabIndex = 9;
-            this.Зберигти.Text = "Зберигти";
+            this.Зберигти.Text = "Зберегти";
             this.Зберигти.UseVisualStyleBackColor = false;
             this.Зберигти.Click += new System.EventHandler(this.Зберигти_Click);
             // 
@@ -583,6 +587,13 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.ГенеруванняКлючів_Click);
             // 
+            // проАвторівToolStripMenuItem
+            // 
+            this.проАвторівToolStripMenuItem.Name = "проАвторівToolStripMenuItem";
+            this.проАвторівToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.проАвторівToolStripMenuItem.Text = "Про алгоритм";
+            this.проАвторівToolStripMenuItem.Click += new System.EventHandler(this.проАвторівToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -666,6 +677,7 @@
         private System.Windows.Forms.Button ЗавантажитиФайл;
         private System.Windows.Forms.Button ШифруватиІнф;
         private System.Windows.Forms.Button Зберигти;
+        private System.Windows.Forms.ToolStripMenuItem проАвторівToolStripMenuItem;
     }
 }
 

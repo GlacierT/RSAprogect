@@ -130,20 +130,8 @@ namespace WindowsFormsApp1
         
         private void домопогаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string t = "";
-             
-            StreamReader sr = new StreamReader(@"C:\Users\User\Desktop\WindowsFormsApp1\про_програму.txt");
-             
-            while (!sr.EndOfStream)
-            {
-                t += "\n";
-                t += sr.ReadLine();
-                t += "\n";
-            }
-             
-            sr.Close();
-            
-            MessageBox.Show(t);
+            ПроПрограму newForm = new ПроПрограму();
+            newForm.Show();
         }
 
         private void Ключі_Click(object sender, EventArgs e)
@@ -174,6 +162,10 @@ namespace WindowsFormsApp1
             textBox2.Enabled = false;
             button5.Enabled = false;
             button6.Enabled = false;
+            pictureBox1.Image = null;
+            pictureBox2.Image = null;
+            textBox4.Text = "";
+            textBox3.Text = "";
         }
 
         private void Дешифрувати_Click(object sender, EventArgs e)
@@ -187,6 +179,10 @@ namespace WindowsFormsApp1
             textBox3.Enabled = false;
             ШифруватиІнф.Enabled = false;
             Зберигти.Enabled = false;
+            pictureBox1.Image = null;
+            pictureBox2.Image = null;
+            textBox4.Text = "";
+            textBox3.Text = "";
         }
 
         private void textBox4_Enter(object sender, EventArgs e)
@@ -789,39 +785,21 @@ namespace WindowsFormsApp1
 
         private void проАвторівToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            string t = "";
-             
-            StreamReader sr = new StreamReader(@"C:\Users\User\Desktop\WindowsFormsApp1\про_авторів.txt");
-             
-            while (!sr.EndOfStream)
-            {
-                t += "\n";
-                t += sr.ReadLine();
-                t += "\n";
-            }
-             
-            sr.Close();
-            
-            MessageBox.Show(t);
+            Про_авторів newForm = new Про_авторів();
+            newForm.Show();
         }
 
 
         private void Інструкція_Click(object sender, EventArgs e)
         {
-            string t = "";
-             
-            StreamReader sr = new StreamReader(@"C:\Users\User\Desktop\WindowsFormsApp1\Інструкція.txt");
-             
-            while (!sr.EndOfStream)
-            {
-                t += "\n";
-                t += sr.ReadLine();
-                t += "\n";
-            }
-             
-            sr.Close();
-            
-            MessageBox.Show(t);
+            Інструкція newForm = new Інструкція();
+            newForm.Show();
+        }
+
+        private void проАвторівToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ПроАлгоритм newForm = new ПроАлгоритм();
+            newForm.Show();
         }
     }
 }
