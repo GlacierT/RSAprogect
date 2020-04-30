@@ -8,9 +8,11 @@
       <e p="WindowsFormsApp1" t="IncludeRecursive">
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="EncodeDecode.cs" t="Include" />
         <e p="Form1.cs" t="Include" />
         <e p="Form1.Designer.cs" t="Include" />
         <e p="Form1.resx" t="Include" />
+        <e p="ImageDate.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
@@ -20,6 +22,7 @@
           <e p="Settings.Designer.cs" t="Include" />
           <e p="Settings.settings" t="Include" />
         </e>
+        <e p="RSAkey.cs" t="Include" />
         <e p="WindowsFormsApp1.csproj" t="IncludeRecursive" />
         <e p="Про авторів.cs" t="Include" />
         <e p="Про авторів.Designer.cs" t="Include" />

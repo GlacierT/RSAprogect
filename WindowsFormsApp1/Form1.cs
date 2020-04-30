@@ -9,18 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Key;
+using ED;
 
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        
-       char[] characters = new char[] {'а',' ', 'б', 'в', 'г', 'ґ', 'д', 'е', 'є', 'ж', 'з', 'и', 'і', 'ї', 'й', 'к', 
-           'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ь', 'ю', 'я', '-', ',',
-           '.',  'А', 'Б', 'В', 'Г', 'Ґ', 'Д', 'Е', 'Є', 'Ж', 'З', 'И', 'І', 'Ї', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 
-           'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ю', 'Я', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '?' };
-        
-        
         public static Image image;
         public static int[] mas;
         public byte[] bytes;
@@ -39,95 +34,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-        
-    private bool IsTheNumberSimple(long n)
-        {
-            if (n < 2)
-                return false;
- 
-            if (n == 2)
-                return true;
- 
-            for (long i = 2; i < n; i++)
-                if (n % i == 0)
-                    return false;
- 
-            return true;
-        }
-        
-        private List<string> RSA_Endoce(string s, long e, long n)
-        {
-            List<string> result = new List<string>();
- 
-            BigInteger bi;
-            
-            for (int i = 0; i < s.Length; i++)
-            {
-                int index = Array.IndexOf(characters, s[i]);
- 
-                bi = new BigInteger(index);
-                bi = BigInteger.Pow(bi, (int)e);
- 
-                BigInteger n_ = new BigInteger((int)n);
- 
-                bi = bi % n_;
- 
-                result.Add(bi.ToString());
-            }
- 
-            return result;
-        }
-        
-        private string RSA_Dedoce(List<string> input, long d, long n)
-        {
-            string result = "";
- 
-            BigInteger bi;
- 
-            foreach (string item in input)
-            {
-                bi = new BigInteger(Convert.ToDouble(item));
-                bi = BigInteger.Pow(bi, (int)d);
- 
-                BigInteger n_ = new BigInteger((int)n);
- 
-                bi = bi % n_;
- 
-                int index = Convert.ToInt32(bi.ToString());
- 
-                result += characters[index].ToString();
-            }
- 
-            return result;
-        }
-        
-        private long Calculate_e()
-        {
-            long d = 0;
-            long[] mas = {3, 5, 7, 11, 17, 31};
- 
-            var ran = new Random();
-            d = mas[ran.Next(0, 5)];
 
-            return d;
-            
-        }
-        
-        private long Calculate_d(long d, long m)
-        {
-            long e = 10;
- 
-            while (true)
-            {
-                if ((e * d) % m == 1)
-                    break;
-                else
-                    e++;
-            }
- 
-            return e;
-        }
-        
         private void домопогаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ПроПрограму newForm = new ПроПрограму();
@@ -351,7 +258,8 @@ namespace WindowsFormsApp1
             {
                 long p = Convert.ToInt64(textBox5.Text);
                 long q = Convert.ToInt64(textBox6.Text);
-                if (IsTheNumberSimple(p) && IsTheNumberSimple(q))
+                RSAkey k = new RSAkey();
+                if (k.IsTheNumberSimple(p) && k.IsTheNumberSimple(q))
                 {
                     Ключі.Enabled = false;
                     Дешифрувати.Enabled = false;
@@ -359,10 +267,11 @@ namespace WindowsFormsApp1
                     textBox5.Enabled = false;
                     textBox6.Enabled = false;
 
+                    RSAkey pas = new RSAkey();
                     long n = p * q;
                     long m = (p - 1) * (q - 1);
-                    long e_ = Calculate_e();
-                    long d = Calculate_d(e_, m);
+                    long e_ = pas.Calculate_e();
+                    long d = pas.Calculate_d(e_, m);
 
                     textBox7.Text = d.ToString();
                     textBox8.Text = n.ToString();
@@ -427,7 +336,8 @@ namespace WindowsFormsApp1
                         long e_ = Convert.ToInt64(textBox11.Text);
                         long n = Convert.ToInt64(textBox12.Text);
 
-                        result = RSA_Endoce(s, e_, n);
+                        EncodeDecode ed = new EncodeDecode();
+                        result = ed.RSA_Endoce(s, e_, n);
                         
 
                         for (int i = 0; i < result.Count; i++)
@@ -473,7 +383,8 @@ namespace WindowsFormsApp1
                         
                         strImg = string.Join(" ", mos);
                         
-                        result = RSA_Endoce(strImg, e_, n);
+                        EncodeDecode ed = new EncodeDecode();
+                        result = ed.RSA_Endoce(strImg, e_, n);
 
                         string som = string.Join(" ", result);
                         int[] ia = som.Split(' ').Select(w => Convert.ToInt32(w)).ToArray();
@@ -647,7 +558,8 @@ namespace WindowsFormsApp1
                         long d = Convert.ToInt64(textBox13.Text);
                         long n = Convert.ToInt64(textBox14.Text);
 
-                        resalt = RSA_Dedoce(input, d, n);
+                        EncodeDecode ed = new EncodeDecode();
+                        resalt = ed.RSA_Dedoce(input, d, n);
 
                         textBox2.Text = resalt;
                             
@@ -695,7 +607,8 @@ namespace WindowsFormsApp1
                         string rlt = string.Join(" ", kj);
                         List<string> res = rlt.Split(' ').ToList();
 
-                        resalt = RSA_Dedoce(res, d, n);
+                        EncodeDecode ed = new EncodeDecode();
+                        resalt = ed.RSA_Dedoce(res, d, n);
 
                         int[] ai = resalt.Split(' ').Select(k => Convert.ToInt32(k)).ToArray();
                         
