@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Key;
 using ED;
+using ImDa;
 
 namespace WindowsFormsApp1
 {
@@ -51,11 +52,6 @@ namespace WindowsFormsApp1
             textBox8.Enabled = false;
             textBox9.Enabled = false;
             textBox10.Enabled = false;
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void Шифрувати_Click(object sender, EventArgs e)
@@ -132,20 +128,8 @@ namespace WindowsFormsApp1
                         "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            var ms = new MemoryStream();
-            if (image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Jpeg))
-            {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            }
-            if (image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Png))
-            {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            }
-            if (image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Bmp))
-            {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
-            }
-            bytes = ms.ToArray();
+            ImageDate id = new ImageDate();
+            bytes = id.MasByte(image);
             mas = bytes.Select(i =>(int) i).ToArray();
 
             textBox11.Enabled = true;
@@ -187,7 +171,6 @@ namespace WindowsFormsApp1
             textBox14.Enabled = true;
             button5.Enabled = true;
             button6.Enabled = false;
-            //button11.Enabled = false;
         }
 
         private void ШифрЗоб_Click(object sender, EventArgs e)
@@ -209,20 +192,8 @@ namespace WindowsFormsApp1
                         "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            var ms = new MemoryStream();
-            if (image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Jpeg))
-            {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            }
-            if (image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Png))
-            {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            }
-            if (image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Bmp))
-            {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
-            }
-            bytes = ms.ToArray();
+            ImageDate id = new ImageDate();
+            bytes = id.MasByte(image);
             mas = bytes.Select(i =>(int) i).ToArray();
 
             OpenFileDialog open_dialog1 = new OpenFileDialog();
@@ -397,9 +368,8 @@ namespace WindowsFormsApp1
                         strImg = string.Join(" ", g);
                         stIm = string.Join(" ", ia);
                         
-                        byte[] b = mas.Select(i => (byte)i).ToArray();
-                        var imageMemoryStream = new MemoryStream(b);
-                        imgFromStream = Image.FromStream(imageMemoryStream);
+                        ImageDate id = new ImageDate();
+                        imgFromStream = id.RetIm(mas);
                         pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                         pictureBox1.Image = imgFromStream;
                         
@@ -617,9 +587,8 @@ namespace WindowsFormsApp1
                             mas[ar[i]] = ai[i]; 
                         }
                         
-                        byte[] b = mas.Select(i => (byte)i).ToArray();
-                        var imageMemoryStream = new MemoryStream(b);
-                        imgFromStream = Image.FromStream(imageMemoryStream);
+                        ImageDate id = new ImageDate();
+                        imgFromStream = id.RetIm(mas);
                         pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
                         pictureBox2.Image = imgFromStream;
                             

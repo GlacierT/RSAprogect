@@ -32,22 +32,11 @@
             this.домопогаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Інструкція = new System.Windows.Forms.ToolStripMenuItem();
             this.проАвторівToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.проАвторівToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Ключі = new System.Windows.Forms.Button();
             this.Дешифрувати = new System.Windows.Forms.Button();
             this.Шифрувати = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -61,6 +50,18 @@
             this.ШифруватиІнф = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -77,12 +78,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.проАвторівToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +121,13 @@
             this.проАвторівToolStripMenuItem1.Size = new System.Drawing.Size(85, 20);
             this.проАвторівToolStripMenuItem1.Text = "Про авторів";
             this.проАвторівToolStripMenuItem1.Click += new System.EventHandler(this.проАвторівToolStripMenuItem1_Click);
+            // 
+            // проАвторівToolStripMenuItem
+            // 
+            this.проАвторівToolStripMenuItem.Name = "проАвторівToolStripMenuItem";
+            this.проАвторівToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.проАвторівToolStripMenuItem.Text = "Про алгоритм";
+            this.проАвторівToolStripMenuItem.Click += new System.EventHandler(this.проАвторівToolStripMenuItem_Click);
             // 
             // Ключі
             // 
@@ -178,125 +185,6 @@
             this.panel1.Size = new System.Drawing.Size(530, 384);
             this.panel1.TabIndex = 4;
             this.panel1.Visible = false;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(210, 263);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(53, 23);
-            this.textBox14.TabIndex = 23;
-            // 
-            // label14
-            // 
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label14.Location = new System.Drawing.Point(157, 261);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 33);
-            this.label14.TabIndex = 22;
-            this.label14.Text = "N = ";
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label13.Location = new System.Drawing.Point(17, 263);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(61, 28);
-            this.label13.TabIndex = 21;
-            this.label13.Text = "D = ";
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(84, 264);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(53, 23);
-            this.textBox13.TabIndex = 20;
-            // 
-            // label12
-            // 
-            this.label12.Location = new System.Drawing.Point(16, 246);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(290, 15);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "Введіть значення ключа :";
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.PeachPuff;
-            this.button11.Location = new System.Drawing.Point(364, 12);
-            this.button11.Margin = new System.Windows.Forms.Padding(2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(128, 58);
-            this.button11.TabIndex = 7;
-            this.button11.Text = "Завантажити зображення";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.ШифрЗоб_Click);
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.PeachPuff;
-            this.button10.Location = new System.Drawing.Point(364, 78);
-            this.button10.Margin = new System.Windows.Forms.Padding(2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(128, 48);
-            this.button10.TabIndex = 6;
-            this.button10.Text = "Завантажити файл";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.ШифрФайл_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(17, 75);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(199, 165);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.PeachPuff;
-            this.button6.Location = new System.Drawing.Point(364, 205);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(128, 50);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Зберигти";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.ЗберигтиДешифр_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.PeachPuff;
-            this.button5.Location = new System.Drawing.Point(364, 144);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(128, 46);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Дешифрувати";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.Дешифрування_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(16, 303);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(320, 58);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(16, 12);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(320, 59);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             // 
             // panel3
             // 
@@ -438,6 +326,125 @@
             this.textBox4.Size = new System.Drawing.Size(293, 51);
             this.textBox4.TabIndex = 5;
             this.textBox4.Enter += new System.EventHandler(this.textBox4_Enter);
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(210, 263);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(53, 23);
+            this.textBox14.TabIndex = 23;
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.label14.Location = new System.Drawing.Point(157, 261);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 33);
+            this.label14.TabIndex = 22;
+            this.label14.Text = "N = ";
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.label13.Location = new System.Drawing.Point(17, 263);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(61, 28);
+            this.label13.TabIndex = 21;
+            this.label13.Text = "D = ";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(84, 264);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(53, 23);
+            this.textBox13.TabIndex = 20;
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(16, 246);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(290, 15);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "Введіть значення ключа :";
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.PeachPuff;
+            this.button11.Location = new System.Drawing.Point(364, 12);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(128, 58);
+            this.button11.TabIndex = 7;
+            this.button11.Text = "Завантажити зображення";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.ШифрЗоб_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.PeachPuff;
+            this.button10.Location = new System.Drawing.Point(364, 78);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(128, 48);
+            this.button10.TabIndex = 6;
+            this.button10.Text = "Завантажити файл";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.ШифрФайл_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(17, 75);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(199, 165);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.PeachPuff;
+            this.button6.Location = new System.Drawing.Point(364, 205);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(128, 50);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Зберигти";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.ЗберигтиДешифр_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.PeachPuff;
+            this.button5.Location = new System.Drawing.Point(364, 144);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(128, 46);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Дешифрувати";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.Дешифрування_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(16, 303);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox2.Size = new System.Drawing.Size(320, 58);
+            this.textBox2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(16, 12);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(320, 59);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             // 
             // panel2
             // 
@@ -587,13 +594,6 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.ГенеруванняКлючів_Click);
             // 
-            // проАвторівToolStripMenuItem
-            // 
-            this.проАвторівToolStripMenuItem.Name = "проАвторівToolStripMenuItem";
-            this.проАвторівToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
-            this.проАвторівToolStripMenuItem.Text = "Про алгоритм";
-            this.проАвторівToolStripMenuItem.Click += new System.EventHandler(this.проАвторівToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -616,10 +616,10 @@
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
